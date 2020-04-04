@@ -20,8 +20,41 @@ library(DataComputing)
 ```
 
 
-# 
+#Guiding Question:
 
-### 
+##Are suicide rates and world happiness inversely correlated?
+
+##Where did you find them?
+Kaggle
+
+##Who collected/maintains them?
+Suicide: A collection of four data sets joined together from the United Nations Development Program, World Bank, World Health Organization, and Kaggle
+
+World Happiness: The world happiness dataset uses information gathered by Gallup World Poll.
+
+##When & Why were they originally collected?
+The suicide rates dataset was collected for sucide prevention.
+
+The World Happiness data set was originally collected in 2015 to analyze which regions or countries in the world were happiest and what factors contributed most to how happy the people in those places were.
+
+##What does a case represent in each data source, and how many total cases are available?
+Suicide: A case represents a group of people based on sex, age/generation, and country. 27,821 cases
+
+World Happiness: a case is a country and there are 158 cases
+
+##What are some of the variables that you plan to use?
+Suicide: Number of suicides, year, sex, country
+
+World Happiness: Country, Happiness Score, Year
 
 
+
+##Explore intuition related to research question:
+
+	R plots
+
+
+
+Two or more data sources:
+World Happiness https://www.kaggle.com/unsdsn/world-happiness
+Suicide rates https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016
