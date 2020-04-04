@@ -20,11 +20,10 @@ library(DataComputing)
 ```
 
 
-# Guiding Question:
+## Guiding Question:
 
-### Are suicide rates and world happiness inversely correlated?
+# Are suicide rates and world happiness inversely correlated?
 
-=======
 ### Where did you find them?
 Kaggle
 >>>>>>> 51d4e5b94c3bb009f14ea30b12a103277482c5b5
@@ -69,6 +68,19 @@ SuicideRates %>%
   facet_wrap( ~age)
 ```
 
+### World Happiness Density Graph
+
+```{r}
+WorldHappiness2015 <-
+  read.csv(file.choose())
+```
+
+
+```{r}
+WorldHappiness2015 %>%
+  ggplot(aes(x=Happiness.Score)) +
+  geom_density()
+```
 
 
 Two or more data sources:
