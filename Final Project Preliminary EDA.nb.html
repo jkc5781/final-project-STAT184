@@ -1767,39 +1767,39 @@ library(DataComputing)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>#Guiding Question:</p>
-<p>##Are suicide rates and world happiness inversely correlated?</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3VpY2lkZVJhdGVzIDwtXG4gIHJlYWQuY3N2KGZpbGUuY2hvb3NlKCkpXG5gYGAifQ== -->
-<pre class="r"><code>SuicideRates &lt;-
-  read.csv(file.choose())</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3VpY2lkZVJhdGVzICU+JVxuICBnZ3Bsb3QoYWVzKHg9eWVhciwgeT1zdWljaWRlcy4xMDBrLnBvcCkpICtcbiAgZ2VvbV9wb2ludChhZXMoY29sb3I9c2V4KSkgK1xuICBmYWNldF93cmFwKCB+YWdlKVxuYGBgIn0= -->
-<pre class="r"><code>SuicideRates %&gt;%
-  ggplot(aes(x=year, y=suicides.100k.pop)) +
-  geom_point(aes(color=sex)) +
-  facet_wrap( ~age)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>======= ##Where did you find them? Kaggle &gt;&gt;&gt;&gt;&gt;&gt;&gt; 51d4e5b94c3bb009f14ea30b12a103277482c5b5</p>
-<p>##Who collected/maintains them? Suicide: A collection of four data sets joined together from the United Nations Development Program, World Bank, World Health Organization, and Kaggle</p>
+</div>
+<div id="guiding-question" class="section level1">
+<h1>Guiding Question:</h1>
+<div id="are-suicide-rates-and-world-happiness-inversely-correlated" class="section level3">
+<h3>Are suicide rates and world happiness inversely correlated?</h3>
+<p>======= ### Where did you find them? Kaggle &gt;&gt;&gt;&gt;&gt;&gt;&gt; 51d4e5b94c3bb009f14ea30b12a103277482c5b5</p>
+</div>
+<div id="who-collectedmaintains-them" class="section level3">
+<h3>Who collected/maintains them?</h3>
+<p>Suicide: A collection of four data sets joined together from the United Nations Development Program, World Bank, World Health Organization, and Kaggle</p>
 <p>World Happiness: The world happiness dataset uses information gathered by Gallup World Poll.</p>
-<p>##When &amp; Why were they originally collected? The suicide rates dataset was collected for sucide prevention.</p>
+</div>
+<div id="when-why-were-they-originally-collected" class="section level3">
+<h3>When &amp; Why were they originally collected?</h3>
+<p>The suicide rates dataset was collected for sucide prevention.</p>
 <p>The World Happiness data set was originally collected in 2015 to analyze which regions or countries in the world were happiest and what factors contributed most to how happy the people in those places were.</p>
-<p>##What does a case represent in each data source, and how many total cases are available? Suicide: A case represents a group of people based on sex, age/generation, and country. 27,821 cases</p>
+</div>
+<div id="what-does-a-case-represent-in-each-data-source-and-how-many-total-cases-are-available" class="section level3">
+<h3>What does a case represent in each data source, and how many total cases are available?</h3>
+<p>Suicide: A case represents a group of people based on sex, age/generation, and country. 27,821 cases</p>
 <p>World Happiness: a case is a country and there are 158 cases</p>
-<p>##What are some of the variables that you plan to use? Suicide: Number of suicides, year, sex, country</p>
+</div>
+<div id="what-are-some-of-the-variables-that-you-plan-to-use" class="section level3">
+<h3>What are some of the variables that you plan to use?</h3>
+<p>Suicide: Number of suicides, year, sex, country</p>
 <p>World Happiness: Country, Happiness Score, Year</p>
-<p>##Explore intuition related to research question:</p>
+</div>
+<div id="explore-intuition-related-to-research-question" class="section level3">
+<h3>Explore intuition related to research question:</h3>
 <p>We believe that our dataset we show a correlation with suicide rates and happiness scores. We think that countries with low happiness scores will have a high suicide rate.</p>
-<p>##Graph of Suicides over the Years</p>
+</div>
+<div id="graph-of-suicides-over-the-years" class="section level3">
+<h3>Graph of Suicides over the Years</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3VpY2lkZVJhdGVzIDwtXG4gIHJlYWQuY3N2KGZpbGUuY2hvb3NlKCkpXG5gYGAifQ== -->
@@ -1824,8 +1824,9 @@ library(DataComputing)</code></pre>
 <p>Two or more data sources: World Happiness <a href="https://www.kaggle.com/unsdsn/world-happiness" class="uri">https://www.kaggle.com/unsdsn/world-happiness</a> Suicide rates <a href="https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016" class="uri">https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016</a></p>
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRmluYWwgUHJvamVjdCBQcmVsaW1pbmFyeSBFREEiCmF1dGhvcjogIiIKZGF0ZTogIkFwcmlsIDV0aCwgMjAyMCIKb3V0cHV0OiAKICAgIGh0bWxfbm90ZWJvb2s6CiAgICBmaWdfaGVpZ2h0OiA2CiAgICBmaWdfd2lkdGg6IDEwCi0tLQojIyMgQ2xlYW4gdXAgZW52aXJvbm1lbnQgYW5kIGxvYWQgcGFja2FnZXMKYGBge3J9CiMgY2xlYW4gdXAgdGhlIFJTdHVkaW8gZW52aXJvbm1lbnQgCnJtKGxpc3QgPSBscygpKQoKIyBsb2FkIGFsbCBwYWNrYWdlcyBoZXJlOiBgbW9zYWljYCwgYHRpZHl2ZXJzZWAsIGBsdWJyaWRhdGVgLCBhbmQgYWxsIG90aGVycyB1c2VkCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KG1vc2FpYykKbGlicmFyeShsdWJyaWRhdGUpCmxpYnJhcnkoRGF0YUNvbXB1dGluZykKYGBgCgoKI0d1aWRpbmcgUXVlc3Rpb246CgojI0FyZSBzdWljaWRlIHJhdGVzIGFuZCB3b3JsZCBoYXBwaW5lc3MgaW52ZXJzZWx5IGNvcnJlbGF0ZWQ/Cgo8PDw8PDw8IEhFQUQKYGBge3J9ClN1aWNpZGVSYXRlcyA8LQogIHJlYWQuY3N2KGZpbGUuY2hvb3NlKCkpCmBgYAoKCmBgYHtyfQpTdWljaWRlUmF0ZXMgJT4lCiAgZ2dwbG90KGFlcyh4PXllYXIsIHk9c3VpY2lkZXMuMTAway5wb3ApKSArCiAgZ2VvbV9wb2ludChhZXMoY29sb3I9c2V4KSkgKwogIGZhY2V0X3dyYXAoIH5hZ2UpCmBgYAo9PT09PT09CiMjV2hlcmUgZGlkIHlvdSBmaW5kIHRoZW0/CkthZ2dsZQo+Pj4+Pj4+IDUxZDRlNWI5NGMzYmIwMDlmMTRlYTMwYjEyYTEwMzI3NzQ4MmM1YjUKCiMjV2hvIGNvbGxlY3RlZC9tYWludGFpbnMgdGhlbT8KU3VpY2lkZTogQSBjb2xsZWN0aW9uIG9mIGZvdXIgZGF0YSBzZXRzIGpvaW5lZCB0b2dldGhlciBmcm9tIHRoZSBVbml0ZWQgTmF0aW9ucyBEZXZlbG9wbWVudCBQcm9ncmFtLCBXb3JsZCBCYW5rLCBXb3JsZCBIZWFsdGggT3JnYW5pemF0aW9uLCBhbmQgS2FnZ2xlCgpXb3JsZCBIYXBwaW5lc3M6IFRoZSB3b3JsZCBoYXBwaW5lc3MgZGF0YXNldCB1c2VzIGluZm9ybWF0aW9uIGdhdGhlcmVkIGJ5IEdhbGx1cCBXb3JsZCBQb2xsLgoKIyNXaGVuICYgV2h5IHdlcmUgdGhleSBvcmlnaW5hbGx5IGNvbGxlY3RlZD8KVGhlIHN1aWNpZGUgcmF0ZXMgZGF0YXNldCB3YXMgY29sbGVjdGVkIGZvciBzdWNpZGUgcHJldmVudGlvbi4KClRoZSBXb3JsZCBIYXBwaW5lc3MgZGF0YSBzZXQgd2FzIG9yaWdpbmFsbHkgY29sbGVjdGVkIGluIDIwMTUgdG8gYW5hbHl6ZSB3aGljaCByZWdpb25zIG9yIGNvdW50cmllcyBpbiB0aGUgd29ybGQgd2VyZSBoYXBwaWVzdCBhbmQgd2hhdCBmYWN0b3JzIGNvbnRyaWJ1dGVkIG1vc3QgdG8gaG93IGhhcHB5IHRoZSBwZW9wbGUgaW4gdGhvc2UgcGxhY2VzIHdlcmUuCgojI1doYXQgZG9lcyBhIGNhc2UgcmVwcmVzZW50IGluIGVhY2ggZGF0YSBzb3VyY2UsIGFuZCBob3cgbWFueSB0b3RhbCBjYXNlcyBhcmUgYXZhaWxhYmxlPwpTdWljaWRlOiBBIGNhc2UgcmVwcmVzZW50cyBhIGdyb3VwIG9mIHBlb3BsZSBiYXNlZCBvbiBzZXgsIGFnZS9nZW5lcmF0aW9uLCBhbmQgY291bnRyeS4gMjcsODIxIGNhc2VzCgpXb3JsZCBIYXBwaW5lc3M6IGEgY2FzZSBpcyBhIGNvdW50cnkgYW5kIHRoZXJlIGFyZSAxNTggY2FzZXMKCiMjV2hhdCBhcmUgc29tZSBvZiB0aGUgdmFyaWFibGVzIHRoYXQgeW91IHBsYW4gdG8gdXNlPwpTdWljaWRlOiBOdW1iZXIgb2Ygc3VpY2lkZXMsIHllYXIsIHNleCwgY291bnRyeQoKV29ybGQgSGFwcGluZXNzOiBDb3VudHJ5LCBIYXBwaW5lc3MgU2NvcmUsIFllYXIKCgoKIyNFeHBsb3JlIGludHVpdGlvbiByZWxhdGVkIHRvIHJlc2VhcmNoIHF1ZXN0aW9uOgoKV2UgYmVsaWV2ZSB0aGF0IG91ciBkYXRhc2V0IHdlIHNob3cgYSBjb3JyZWxhdGlvbiB3aXRoIHN1aWNpZGUgcmF0ZXMgYW5kIGhhcHBpbmVzcyBzY29yZXMuIFdlIHRoaW5rIHRoYXQgY291bnRyaWVzIHdpdGggbG93IGhhcHBpbmVzcyBzY29yZXMgd2lsbCBoYXZlIGEgaGlnaCBzdWljaWRlIHJhdGUuCgojI0dyYXBoIG9mIFN1aWNpZGVzIG92ZXIgdGhlIFllYXJzCmBgYHtyfQpTdWljaWRlUmF0ZXMgPC0KICByZWFkLmNzdihmaWxlLmNob29zZSgpKQpgYGAKCgpgYGB7cn0KU3VpY2lkZVJhdGVzICU+JQogIGdncGxvdChhZXMoeD15ZWFyLCB5PXN1aWNpZGVzLjEwMGsucG9wKSkgKwogIGdlb21fcG9pbnQoYWVzKGNvbG9yPXNleCkpICsKICBmYWNldF93cmFwKCB+YWdlKQpgYGAKCgoKVHdvIG9yIG1vcmUgZGF0YSBzb3VyY2VzOgpXb3JsZCBIYXBwaW5lc3MgaHR0cHM6Ly93d3cua2FnZ2xlLmNvbS91bnNkc24vd29ybGQtaGFwcGluZXNzClN1aWNpZGUgcmF0ZXMgaHR0cHM6Ly93d3cua2FnZ2xlLmNvbS9ydXNzZWxseWF0ZXM4OC9zdWljaWRlLXJhdGVzLW92ZXJ2aWV3LTE5ODUtdG8tMjAxNgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRmluYWwgUHJvamVjdCBQcmVsaW1pbmFyeSBFREEiCmF1dGhvcjogIiIKZGF0ZTogIkFwcmlsIDV0aCwgMjAyMCIKb3V0cHV0OiAKICAgIGh0bWxfbm90ZWJvb2s6CiAgICBmaWdfaGVpZ2h0OiA2CiAgICBmaWdfd2lkdGg6IDEwCi0tLQojIyMgQ2xlYW4gdXAgZW52aXJvbm1lbnQgYW5kIGxvYWQgcGFja2FnZXMKYGBge3J9CiMgY2xlYW4gdXAgdGhlIFJTdHVkaW8gZW52aXJvbm1lbnQgCnJtKGxpc3QgPSBscygpKQoKIyBsb2FkIGFsbCBwYWNrYWdlcyBoZXJlOiBgbW9zYWljYCwgYHRpZHl2ZXJzZWAsIGBsdWJyaWRhdGVgLCBhbmQgYWxsIG90aGVycyB1c2VkCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KG1vc2FpYykKbGlicmFyeShsdWJyaWRhdGUpCmxpYnJhcnkoRGF0YUNvbXB1dGluZykKYGBgCgoKIyBHdWlkaW5nIFF1ZXN0aW9uOgoKIyMjIEFyZSBzdWljaWRlIHJhdGVzIGFuZCB3b3JsZCBoYXBwaW5lc3MgaW52ZXJzZWx5IGNvcnJlbGF0ZWQ/Cgo9PT09PT09CiMjIyBXaGVyZSBkaWQgeW91IGZpbmQgdGhlbT8KS2FnZ2xlCj4+Pj4+Pj4gNTFkNGU1Yjk0YzNiYjAwOWYxNGVhMzBiMTJhMTAzMjc3NDgyYzViNQoKIyMjIFdobyBjb2xsZWN0ZWQvbWFpbnRhaW5zIHRoZW0/ClN1aWNpZGU6IEEgY29sbGVjdGlvbiBvZiBmb3VyIGRhdGEgc2V0cyBqb2luZWQgdG9nZXRoZXIgZnJvbSB0aGUgVW5pdGVkIE5hdGlvbnMgRGV2ZWxvcG1lbnQgUHJvZ3JhbSwgV29ybGQgQmFuaywgV29ybGQgSGVhbHRoIE9yZ2FuaXphdGlvbiwgYW5kIEthZ2dsZQoKV29ybGQgSGFwcGluZXNzOiBUaGUgd29ybGQgaGFwcGluZXNzIGRhdGFzZXQgdXNlcyBpbmZvcm1hdGlvbiBnYXRoZXJlZCBieSBHYWxsdXAgV29ybGQgUG9sbC4KCiMjIyBXaGVuICYgV2h5IHdlcmUgdGhleSBvcmlnaW5hbGx5IGNvbGxlY3RlZD8KVGhlIHN1aWNpZGUgcmF0ZXMgZGF0YXNldCB3YXMgY29sbGVjdGVkIGZvciBzdWNpZGUgcHJldmVudGlvbi4KClRoZSBXb3JsZCBIYXBwaW5lc3MgZGF0YSBzZXQgd2FzIG9yaWdpbmFsbHkgY29sbGVjdGVkIGluIDIwMTUgdG8gYW5hbHl6ZSB3aGljaCByZWdpb25zIG9yIGNvdW50cmllcyBpbiB0aGUgd29ybGQgd2VyZSBoYXBwaWVzdCBhbmQgd2hhdCBmYWN0b3JzIGNvbnRyaWJ1dGVkIG1vc3QgdG8gaG93IGhhcHB5IHRoZSBwZW9wbGUgaW4gdGhvc2UgcGxhY2VzIHdlcmUuCgojIyMgV2hhdCBkb2VzIGEgY2FzZSByZXByZXNlbnQgaW4gZWFjaCBkYXRhIHNvdXJjZSwgYW5kIGhvdyBtYW55IHRvdGFsIGNhc2VzIGFyZSBhdmFpbGFibGU/ClN1aWNpZGU6IEEgY2FzZSByZXByZXNlbnRzIGEgZ3JvdXAgb2YgcGVvcGxlIGJhc2VkIG9uIHNleCwgYWdlL2dlbmVyYXRpb24sIGFuZCBjb3VudHJ5LiAyNyw4MjEgY2FzZXMKCldvcmxkIEhhcHBpbmVzczogYSBjYXNlIGlzIGEgY291bnRyeSBhbmQgdGhlcmUgYXJlIDE1OCBjYXNlcwoKIyMjIFdoYXQgYXJlIHNvbWUgb2YgdGhlIHZhcmlhYmxlcyB0aGF0IHlvdSBwbGFuIHRvIHVzZT8KU3VpY2lkZTogTnVtYmVyIG9mIHN1aWNpZGVzLCB5ZWFyLCBzZXgsIGNvdW50cnkKCldvcmxkIEhhcHBpbmVzczogQ291bnRyeSwgSGFwcGluZXNzIFNjb3JlLCBZZWFyCgoKCiMjIyBFeHBsb3JlIGludHVpdGlvbiByZWxhdGVkIHRvIHJlc2VhcmNoIHF1ZXN0aW9uOgoKV2UgYmVsaWV2ZSB0aGF0IG91ciBkYXRhc2V0IHdlIHNob3cgYSBjb3JyZWxhdGlvbiB3aXRoIHN1aWNpZGUgcmF0ZXMgYW5kIGhhcHBpbmVzcyBzY29yZXMuIFdlIHRoaW5rIHRoYXQgY291bnRyaWVzIHdpdGggbG93IGhhcHBpbmVzcyBzY29yZXMgd2lsbCBoYXZlIGEgaGlnaCBzdWljaWRlIHJhdGUuCgojIyMgR3JhcGggb2YgU3VpY2lkZXMgb3ZlciB0aGUgWWVhcnMKYGBge3J9ClN1aWNpZGVSYXRlcyA8LQogIHJlYWQuY3N2KGZpbGUuY2hvb3NlKCkpCmBgYAoKCmBgYHtyfQpTdWljaWRlUmF0ZXMgJT4lCiAgZ2dwbG90KGFlcyh4PXllYXIsIHk9c3VpY2lkZXMuMTAway5wb3ApKSArCiAgZ2VvbV9wb2ludChhZXMoY29sb3I9c2V4KSkgKwogIGZhY2V0X3dyYXAoIH5hZ2UpCmBgYAoKCgpUd28gb3IgbW9yZSBkYXRhIHNvdXJjZXM6CldvcmxkIEhhcHBpbmVzcyBodHRwczovL3d3dy5rYWdnbGUuY29tL3Vuc2Rzbi93b3JsZC1oYXBwaW5lc3MKU3VpY2lkZSByYXRlcyBodHRwczovL3d3dy5rYWdnbGUuY29tL3J1c3NlbGx5YXRlczg4L3N1aWNpZGUtcmF0ZXMtb3ZlcnZpZXctMTk4NS10by0yMDE2Cg==</div>
 
 
 

@@ -20,55 +20,42 @@ library(DataComputing)
 ```
 
 
-#Guiding Question:
+# Guiding Question:
 
-##Are suicide rates and world happiness inversely correlated?
+### Are suicide rates and world happiness inversely correlated?
 
-<<<<<<< HEAD
-```{r}
-SuicideRates <-
-  read.csv(file.choose())
-```
-
-
-```{r}
-SuicideRates %>%
-  ggplot(aes(x=year, y=suicides.100k.pop)) +
-  geom_point(aes(color=sex)) +
-  facet_wrap( ~age)
-```
 =======
-##Where did you find them?
+### Where did you find them?
 Kaggle
 >>>>>>> 51d4e5b94c3bb009f14ea30b12a103277482c5b5
 
-##Who collected/maintains them?
+### Who collected/maintains them?
 Suicide: A collection of four data sets joined together from the United Nations Development Program, World Bank, World Health Organization, and Kaggle
 
 World Happiness: The world happiness dataset uses information gathered by Gallup World Poll.
 
-##When & Why were they originally collected?
+### When & Why were they originally collected?
 The suicide rates dataset was collected for sucide prevention.
 
 The World Happiness data set was originally collected in 2015 to analyze which regions or countries in the world were happiest and what factors contributed most to how happy the people in those places were.
 
-##What does a case represent in each data source, and how many total cases are available?
+### What does a case represent in each data source, and how many total cases are available?
 Suicide: A case represents a group of people based on sex, age/generation, and country. 27,821 cases
 
 World Happiness: a case is a country and there are 158 cases
 
-##What are some of the variables that you plan to use?
+### What are some of the variables that you plan to use?
 Suicide: Number of suicides, year, sex, country
 
 World Happiness: Country, Happiness Score, Year
 
 
 
-##Explore intuition related to research question:
+### Explore intuition related to research question:
 
 We believe that our dataset we show a correlation with suicide rates and happiness scores. We think that countries with low happiness scores will have a high suicide rate.
 
-##Graph of Suicides over the Years
+### Graph of Suicides over the Years
 ```{r}
 SuicideRates <-
   read.csv(file.choose())
