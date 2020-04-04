@@ -66,6 +66,9 @@ World Happiness: Country, Happiness Score, Year
 
 ##Explore intuition related to research question:
 
+We believe that our dataset we show a correlation with suicide rates and happiness scores. We think that countries with low happiness scores will have a high suicide rate.
+
+##Graph of Suicides over the Years
 ```{r}
 SuicideRates <-
   read.csv(file.choose())
