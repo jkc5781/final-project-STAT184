@@ -1,6 +1,6 @@
 ---
 title: "Final Project Preliminary EDA"
-author: ""
+author: "Jared Cao, Macklin Yarris, Abby Crilley"
 date: "April 5th, 2020"
 output: 
     html_notebook:
