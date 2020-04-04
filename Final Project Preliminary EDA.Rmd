@@ -1,0 +1,27 @@
+---
+title: "Final Project Preliminary EDA"
+author: ""
+date: "April 5th, 2020"
+output: 
+    html_notebook:
+    fig_height: 6
+    fig_width: 10
+---
+### Clean up environment and load packages
+```{r}
+# clean up the RStudio environment 
+rm(list = ls())
+
+# load all packages here: `mosaic`, `tidyverse`, `lubridate`, and all others used
+library(tidyverse)
+library(mosaic)
+library(lubridate)
+library(DataComputing)
+```
+
+
+# 
+
+### 
+
+
