@@ -24,4 +24,16 @@ library(DataComputing)
 
 ### 
 
+```{r}
+SuicideRates <-
+  read.csv(file.choose())
+```
+
+
+```{r}
+SuicideRates %>%
+  ggplot(aes(x=year, y=suicides.100k.pop)) +
+  geom_point(aes(color=sex)) +
+  facet_wrap( ~age)
+```
 
