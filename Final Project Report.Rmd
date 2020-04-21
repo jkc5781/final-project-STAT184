@@ -133,8 +133,16 @@ SuicideHappiness
 ## Data Visualization
 ```{r}
 SuicideHappiness%>%
-  ggplot(aes(x = Happiness2015, y = Year2015, color = country, fill = country)) +
+  ggplot(aes(x = Happiness2015, y = Year2015, color = country)) +
   geom_point() +
-  facet_wrap(~sex)
+  geom_point(aes(x = Happiness2016, y = Year2016, color = country, fill = country), alpha = 0.5) +
+  facet_wrap(~sex) +
+  xlab("Happiness Score") +
+  ylab("Number of Suicides")
+  
+```
+
+```{r}
+
 ```
 
