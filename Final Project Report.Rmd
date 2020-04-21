@@ -68,7 +68,8 @@ view(RecentSuicideRates)
 ```
 
 ```{r}
-RecentSuicideRates %>%
+RecentSuicideRates <-
+  RecentSuicideRates %>%
   select(country, year, sex, age, population, suicides_no, suicides.100k.pop)
 
 ```
