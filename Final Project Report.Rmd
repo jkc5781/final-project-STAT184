@@ -57,13 +57,13 @@ head(WorldHappiness2016)
 ```{r}
 WorldHappiness2015 <-
   WorldHappiness2015 %>%
-  mutate(year = 2015)
+  mutate(year = "Happiness2015")
 ```
 
 ```{r}
 WorldHappiness2016 <-
   WorldHappiness2016 %>%
-  mutate(year = 2016)
+  mutate(year = "Happiness2016")
 ```
 
 ```{r}
@@ -94,7 +94,7 @@ RecentSuicideRates <-
 ```{r}
 WorldHappiness <-
   WorldHappiness %>%
-  select(Country, Happiness.Rank, Happiness.Score, Family, Freedom, Generosity, year)
+  select(country = Country, Happiness.Score, year)
 WorldHappiness
 ```
 
@@ -103,5 +103,25 @@ SuicideByYear <-
   RecentSuicideRates %>%
   spread(key = year, value = totalsuicides)
 ```
+
+```{r}
+SuicideByYear <-
+  SuicideByYear %>%
+  na.omit()
+```
+
+```{r}
+WorldHappinessByYear <-
+  WorldHappiness %>%
+  spread(key = year, value = Happiness.Score) %>%
+  na.omit
+```
+
+```{r}
+SuicideHappiness <-
+  SuicideByYear %>%
+  inner_join(WorldHappinessByYear)
+```
+
 
 ## Data Visualization
