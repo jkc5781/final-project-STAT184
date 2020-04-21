@@ -60,5 +60,11 @@ WorldHappiness <-
 view(WorldHappiness)
 ```
 
+```{r}
+RecentSuicideRates <-
+  SuicideRates %>%
+  filter(year == 2015 | year == 2016)
+view(RecentSuicideRates)
+```
 
 ## Data Visualization
