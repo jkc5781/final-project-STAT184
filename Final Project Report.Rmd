@@ -19,6 +19,12 @@ library(lubridate)
 library(DataComputing)
 ```
 
+## Guiding Question:
+
+# Are suicide rates and world happiness inversely correlated?
+
+<br>
+
 ## Data Access
 
 ```{r}
