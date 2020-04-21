@@ -52,7 +52,7 @@ head(WorldHappiness2016)
 
 ## Data Wrangling
 
-# Joined World Happiness
+# Joined World Happiness (.x is 2015 and .y is 2016)
 ```{r}
 WorldHappiness <-
   WorldHappiness2015 %>%
