@@ -18,3 +18,13 @@ library(mosaic)
 library(lubridate)
 library(DataComputing)
 ```
+
+## Data Access
+
+
+
+## Data Wrangling
+
+
+
+## Data Visualization
