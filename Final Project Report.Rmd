@@ -49,8 +49,16 @@ head(WorldHappiness2016)
 ```
 
 
+
 ## Data Wrangling
 
+# Joined World Happiness
+```{r}
+WorldHappiness <-
+  WorldHappiness2015 %>%
+  full_join(WorldHappiness2016, by = c("Country" = "Country"))
+view(WorldHappiness)
+```
 
 
 ## Data Visualization
