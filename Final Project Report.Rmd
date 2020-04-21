@@ -48,16 +48,28 @@ head(WorldHappiness2015)
 head(WorldHappiness2016)
 ```
 
-
-
 ## Data Wrangling
 
+<br>
+
 # Joined World Happiness (.x is 2015 and .y is 2016)
+
+```{r}
+WorldHappiness2015 <-
+  WorldHappiness2015 %>%
+  mutate(year = 2015)
+```
+
+```{r}
+WorldHappiness2016 <-
+  WorldHappiness2016 %>%
+  mutate(year = 2016)
+```
+
 ```{r}
 WorldHappiness <-
   WorldHappiness2015 %>%
-  full_join(WorldHappiness2016, by = c("Country" = "Country"))
-view(WorldHappiness)
+  full_join(WorldHappiness2016)
 ```
 
 ```{r}
@@ -71,7 +83,7 @@ view(RecentSuicideRates)
 RecentSuicideRates <-
   RecentSuicideRates %>%
   select(country, year, sex, age, population, suicides_no, suicides.100k.pop)
-
 ```
+
 
 ## Data Visualization
