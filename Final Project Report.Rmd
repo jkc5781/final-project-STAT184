@@ -70,6 +70,7 @@ WorldHappiness2016 <-
 WorldHappiness <-
   WorldHappiness2015 %>%
   full_join(WorldHappiness2016)
+WorldHappiness
 ```
 
 ```{r}
@@ -83,6 +84,14 @@ view(RecentSuicideRates)
 RecentSuicideRates <-
   RecentSuicideRates %>%
   select(country, year, sex, age, population, suicides_no, suicides.100k.pop)
+RecentSuicideRates
+```
+
+```{r}
+WorldHappiness <-
+  WorldHappiness %>%
+  select(Country, Happiness.Rank, Happiness.Score, Family, Freedom, Generosity, year)
+WorldHappiness
 ```
 
 
