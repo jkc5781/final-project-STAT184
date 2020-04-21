@@ -89,6 +89,7 @@ RecentSuicideRates <-
   RecentSuicideRates %>%
   group_by(country, year, sex) %>%
   summarise(totalsuicides = sum(suicides_no))
+RecentSuicideRates
 ```
 
 ```{r}
@@ -108,6 +109,9 @@ SuicideByYear <-
 SuicideByYear <-
   SuicideByYear %>%
   na.omit()
+
+names(SuicideByYear)[3] <- "Year2015"
+names(SuicideByYear)[4] <- "Year2016"
 ```
 
 ```{r}
@@ -115,13 +119,22 @@ WorldHappinessByYear <-
   WorldHappiness %>%
   spread(key = year, value = Happiness.Score) %>%
   na.omit
+WorldHappinessByYear
 ```
 
 ```{r}
 SuicideHappiness <-
   SuicideByYear %>%
   inner_join(WorldHappinessByYear)
+SuicideHappiness
 ```
 
 
 ## Data Visualization
+```{r}
+SuicideHappiness%>%
+  ggplot(aes(x = Happiness2015, y = Year2015, color = country, fill = country)) +
+  geom_point() +
+  facet_wrap(~sex)
+```
+
