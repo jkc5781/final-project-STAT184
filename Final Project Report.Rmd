@@ -42,6 +42,12 @@ WorldHappiness2016 <-
   read.csv(file.choose())
 ```
 
+```{r}
+head(SuicideRates)
+head(WorldHappiness2015)
+head(WorldHappiness2016)
+```
+
 
 ## Data Wrangling
 
