@@ -1771,6 +1771,30 @@ library(DataComputing)</code></pre>
 </div>
 <div id="data-access" class="section level2">
 <h2>Data Access</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3VpY2lkZVJhdGVzIDwtXG4gIHJlYWQuY3N2KGZpbGUuY2hvb3NlKCkpXG5gYGAifQ== -->
+<pre class="r"><code>SuicideRates &lt;-
+  read.csv(file.choose())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV29ybGRIYXBwaW5lc3MyMDE1IDwtXG4gIHJlYWQuY3N2KGZpbGUuY2hvb3NlKCkpXG5gYGAifQ== -->
+<pre class="r"><code>WorldHappiness2015 &lt;-
+  read.csv(file.choose())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuV29ybGRIYXBwaW5lc3MyMDE2IDwtXG4gIHJlYWQuY3N2KGZpbGUuY2hvb3NlKCkpXG5gYGAifQ== -->
+<pre class="r"><code>WorldHappiness2016 &lt;-
+  read.csv(file.choose())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="data-wrangling" class="section level2">
 <h2>Data Wrangling</h2>
@@ -1780,7 +1804,7 @@ library(DataComputing)</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRmluYWwgUHJvamVjdCBSZXBvcnQiCmF1dGhvcjogIkphcmVkIENhbywgTWFja2xpbiBZYXJyaXMsIEFiYnkgQ3JpbGxleSIKZGF0ZTogIkFwcmlsIDI0dGgsIDIwMjAiCm91dHB1dDogCiAgICBodG1sX25vdGVib29rOgogICAgZmlnX2hlaWdodDogNgogICAgZmlnX3dpZHRoOiAxMAotLS0KIyMjIENsZWFuIHVwIGVudmlyb25tZW50IGFuZCBsb2FkIHBhY2thZ2VzCmBgYHtyfQojIGNsZWFuIHVwIHRoZSBSU3R1ZGlvIGVudmlyb25tZW50IApybShsaXN0ID0gbHMoKSkKCiMgbG9hZCBhbGwgcGFja2FnZXMgaGVyZTogYG1vc2FpY2AsIGB0aWR5dmVyc2VgLCBgbHVicmlkYXRlYCwgYW5kIGFsbCBvdGhlcnMgdXNlZApsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShtb3NhaWMpCmxpYnJhcnkobHVicmlkYXRlKQpsaWJyYXJ5KERhdGFDb21wdXRpbmcpCmBgYAoKIyMgRGF0YSBBY2Nlc3MKCgoKIyMgRGF0YSBXcmFuZ2xpbmcKCgoKIyMgRGF0YSBWaXN1YWxpemF0aW9uCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRmluYWwgUHJvamVjdCBSZXBvcnQiCmF1dGhvcjogIkphcmVkIENhbywgTWFja2xpbiBZYXJyaXMsIEFiYnkgQ3JpbGxleSIKZGF0ZTogIkFwcmlsIDI0dGgsIDIwMjAiCm91dHB1dDogCiAgICBodG1sX25vdGVib29rOgogICAgZmlnX2hlaWdodDogNgogICAgZmlnX3dpZHRoOiAxMAotLS0KIyMjIENsZWFuIHVwIGVudmlyb25tZW50IGFuZCBsb2FkIHBhY2thZ2VzCmBgYHtyfQojIGNsZWFuIHVwIHRoZSBSU3R1ZGlvIGVudmlyb25tZW50IApybShsaXN0ID0gbHMoKSkKCiMgbG9hZCBhbGwgcGFja2FnZXMgaGVyZTogYG1vc2FpY2AsIGB0aWR5dmVyc2VgLCBgbHVicmlkYXRlYCwgYW5kIGFsbCBvdGhlcnMgdXNlZApsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShtb3NhaWMpCmxpYnJhcnkobHVicmlkYXRlKQpsaWJyYXJ5KERhdGFDb21wdXRpbmcpCmBgYAoKIyMgRGF0YSBBY2Nlc3MKCmBgYHtyfQpTdWljaWRlUmF0ZXMgPC0KICByZWFkLmNzdihmaWxlLmNob29zZSgpKQpgYGAKCmBgYHtyfQpXb3JsZEhhcHBpbmVzczIwMTUgPC0KICByZWFkLmNzdihmaWxlLmNob29zZSgpKQpgYGAKCmBgYHtyfQpXb3JsZEhhcHBpbmVzczIwMTYgPC0KICByZWFkLmNzdihmaWxlLmNob29zZSgpKQpgYGAKCgojIyBEYXRhIFdyYW5nbGluZwoKCgojIyBEYXRhIFZpc3VhbGl6YXRpb24K</div>
 
 
 

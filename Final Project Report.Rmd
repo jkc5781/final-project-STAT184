@@ -21,6 +21,20 @@ library(DataComputing)
 
 ## Data Access
 
+```{r}
+SuicideRates <-
+  read.csv(file.choose())
+```
+
+```{r}
+WorldHappiness2015 <-
+  read.csv(file.choose())
+```
+
+```{r}
+WorldHappiness2016 <-
+  read.csv(file.choose())
+```
 
 
 ## Data Wrangling
