@@ -83,8 +83,12 @@ view(RecentSuicideRates)
 ```{r}
 RecentSuicideRates <-
   RecentSuicideRates %>%
-  select(country, year, sex, age, population, suicides_no, suicides.100k.pop)
-RecentSuicideRates
+  select(country, year, sex, population, suicides_no, suicides.100k.pop)
+
+RecentSuicideRates <-
+  RecentSuicideRates %>%
+  group_by(country, year, sex) %>%
+  summarise(totalsuicides = sum(suicides_no))
 ```
 
 ```{r}
@@ -94,5 +98,10 @@ WorldHappiness <-
 WorldHappiness
 ```
 
+```{r}
+SuicideByYear <-
+  RecentSuicideRates %>%
+  spread(key = year, value = totalsuicides)
+```
 
 ## Data Visualization
