@@ -27,6 +27,7 @@ library(DataComputing)
 
 ## Data Access
 
+### Download all data files needed
 ```{r}
 SuicideRates <-
   read.csv(file.choose())
@@ -52,32 +53,29 @@ head(WorldHappiness2016)
 
 <br>
 
-# Joined World Happiness (.x is 2015 and .y is 2016)
-
+###Join 2015 and 2016 World Happiness tables
 ```{r}
 WorldHappiness2015 <-
   WorldHappiness2015 %>%
   mutate(year = "Happiness2015")
-```
 
-```{r}
 WorldHappiness2016 <-
   WorldHappiness2016 %>%
   mutate(year = "Happiness2016")
-```
 
-```{r}
 WorldHappiness <-
   WorldHappiness2015 %>%
   full_join(WorldHappiness2016)
 ```
 
+### Only get years 2015 and 2016 from the suicide master table
 ```{r}
 RecentSuicideRates <-
   SuicideRates %>%
   filter(year == 2015 | year == 2016)
 ```
 
+### Select and group by key values in suicide table
 ```{r}
 RecentSuicideRates <-
   RecentSuicideRates %>%
@@ -90,53 +88,55 @@ RecentSuicideRates <-
 RecentSuicideRates
 ```
 
+### select key values in happiness table
 ```{r}
 WorldHappiness <-
   WorldHappiness %>%
   select(country = Country, Happiness.Score, year)
-WorldHappiness
 ```
 
+### Spread suicide table
 ```{r}
 SuicideByYear <-
   RecentSuicideRates %>%
   spread(key = year, value = totalsuicides)
 
+```
+
+### Omit any NA values and rename 2015 and 2016 columns
+```{r}
 Suicide2015<-
   SuicideByYear[1:3]
 names(Suicide2015)[3] <- "Year2015"
-Suicide2015
-```
 
-```{r}
 SuicideByYear <-
   SuicideByYear %>%
   na.omit()
 
 names(SuicideByYear)[3] <- "Year2015"
 names(SuicideByYear)[4] <- "Year2016"
-SuicideByYear
 ```
 
+### Spread World Happiness table and omit any NA values
 ```{r}
 WorldHappinessByYear <-
   WorldHappiness %>%
   spread(key = year, value = Happiness.Score) %>%
   na.omit
-WorldHappinessByYear
 
-Happiness2015<-WorldHappinessByYear[1:2]
+H2015<-WorldHappinessByYear[1:2]
 ```
 
+### Join the Happiness and Suicide tables
 ```{r}
 SuicideHappiness <-
   SuicideByYear %>%
   inner_join(WorldHappinessByYear)
-SuicideHappiness
 
 SH2015<-
 Suicide2015%>%
-  inner_join(Happiness2015)
+  inner_join(H2015)
+SH2015
 ```
 
 
@@ -154,6 +154,7 @@ SuicideHappiness%>%
 ```
 
 ```{r}
+
 SH2015%>%
   ggplot(aes(x = Happiness2015, y = Year2015)) +
   geom_point() +
