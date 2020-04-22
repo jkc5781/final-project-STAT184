@@ -70,14 +70,12 @@ WorldHappiness2016 <-
 WorldHappiness <-
   WorldHappiness2015 %>%
   full_join(WorldHappiness2016)
-WorldHappiness
 ```
 
 ```{r}
 RecentSuicideRates <-
   SuicideRates %>%
   filter(year == 2015 | year == 2016)
-view(RecentSuicideRates)
 ```
 
 ```{r}
@@ -103,6 +101,11 @@ WorldHappiness
 SuicideByYear <-
   RecentSuicideRates %>%
   spread(key = year, value = totalsuicides)
+
+Suicide2015<-
+  SuicideByYear[1:3]
+names(Suicide2015)[3] <- "Year2015"
+Suicide2015
 ```
 
 ```{r}
@@ -112,6 +115,7 @@ SuicideByYear <-
 
 names(SuicideByYear)[3] <- "Year2015"
 names(SuicideByYear)[4] <- "Year2016"
+SuicideByYear
 ```
 
 ```{r}
@@ -120,6 +124,8 @@ WorldHappinessByYear <-
   spread(key = year, value = Happiness.Score) %>%
   na.omit
 WorldHappinessByYear
+
+Happiness2015<-WorldHappinessByYear[1:2]
 ```
 
 ```{r}
@@ -127,6 +133,10 @@ SuicideHappiness <-
   SuicideByYear %>%
   inner_join(WorldHappinessByYear)
 SuicideHappiness
+
+SH2015<-
+Suicide2015%>%
+  inner_join(Happiness2015)
 ```
 
 
@@ -137,8 +147,19 @@ SuicideHappiness%>%
   geom_point() +
   geom_point(aes(x = Happiness2016, y = Year2016, color = country, fill = country), alpha = 0.5) +
   facet_wrap(~sex) +
-  xlab("Happiness Score") +
-  ylab("Number of Suicides")
-  
+  xlab("Happiness Scores in 2015-16") +
+  ylab("Suicides in 2015-16") +
+  theme(legend.position = "bottom") +
+  ylim(0, 2000)
+```
+
+```{r}
+SH2015%>%
+  ggplot(aes(x = Happiness2015, y = Year2015)) +
+  geom_point() +
+  geom_smooth() +
+  ylim(0, 10000) +
+  ylab("Country Suicides in 2015") +
+  xlab("Country Happiness Scores in 2015")
 ```
 
