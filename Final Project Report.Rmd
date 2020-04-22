@@ -127,7 +127,7 @@ WorldHappinessByYear <-
 H2015<-WorldHappinessByYear[1:2]
 ```
 
-### Join the Happiness and Suicide tables
+### Join the Happiness and Suicide tables to analyze the correlation
 ```{r}
 SuicideHappiness <-
   SuicideByYear %>%
@@ -152,7 +152,10 @@ SuicideHappiness%>%
   theme(legend.position = "bottom") +
   ylim(0, 2000)
 ```
+There is slight inverse correlation between suicide rate and happiness value, but not enough to say they effect each others values.
 
+
+# Graph of just 2015 suicide and happiness values
 ```{r}
 
 SH2015%>%
@@ -163,4 +166,4 @@ SH2015%>%
   ylab("Country Suicides in 2015") +
   xlab("Country Happiness Scores in 2015")
 ```
-
+We separated the 2015 and 2016 values because there is more data from 2015 than 2016. There are about 100 glyphs in 2015 rather than the joined 2015 and 2016 there are only 28. From this graph we have more data points and can easily tell the rate of suicides start to drop when the happiness value reaches 7. We can conclude that when a country's happiness value is in the highest range the suicide rates decrease.
