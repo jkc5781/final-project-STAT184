@@ -22,7 +22,7 @@ library(DataComputing)
 ## Guiding Question:
 
 # Are suicide rates and world happiness inversely correlated?
-
+Our goal of this report is to look into whether or not countries that are generally happier have less citizens committing suicide. We have found a few data sets that will help us come up with an answer to this question. By combining data gathered on suicides across the world and reports on world happiness over the years, we have been able to make some insights.
 <br>
 
 ## Data Access
