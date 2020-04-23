@@ -19,13 +19,19 @@ library(lubridate)
 library(DataComputing)
 ```
 
-## Guiding Question:
+### Guiding Question:
 
-# Are suicide rates and world happiness inversely correlated?
+## Are suicide rates and world happiness inversely correlated?
+
+<br>
+
 Our goal of this report is to look into whether or not countries that are generally happier have less citizens committing suicide. We have found a few data sets that will help us come up with an answer to this question. By combining data gathered on suicides across the world and reports on world happiness over the years, we have been able to make some insights.
+
 <br>
 
 ## Data Access
+
+<br>
 
 ### Download all data files needed
 ```{r}
@@ -53,7 +59,8 @@ head(WorldHappiness2016)
 
 <br>
 
-###Join 2015 and 2016 World Happiness tables
+### Join 2015 and 2016 World Happiness tables
+
 ```{r}
 WorldHappiness2015 <-
   WorldHappiness2015 %>%
@@ -92,7 +99,7 @@ RecentSuicideRates
 ```{r}
 WorldHappiness <-
   WorldHappiness %>%
-  select(country = Country, Happiness.Score, year)
+  select(country = Country, Happiness.Score, Generosity, year)
 ```
 
 ### Spread suicide table
@@ -121,11 +128,32 @@ names(SuicideByYear)[4] <- "Year2016"
 ```{r}
 WorldHappinessByYear <-
   WorldHappiness %>%
+  select(country, Happiness.Score, year) %>%
   spread(key = year, value = Happiness.Score) %>%
   na.omit
 
 H2015<-WorldHappinessByYear[1:2]
 ```
+
+### Values based on Generosity
+```{r}
+WorldHappinessByYear <-
+  WorldHappiness %>%
+  select(country, Generosity, year) %>%
+  spread(key = year, value = Generosity) %>%
+  na.omit
+
+G2015<-WorldHappinessByYear[1:2]
+names(G2015)[2] <- "Generosity2015"
+```
+
+```{r}
+SG2015<-
+Suicide2015%>%
+  inner_join(G2015)
+SG2015
+```
+
 
 ### Join the Happiness and Suicide tables to analyze the correlation
 ```{r}
@@ -154,6 +182,7 @@ SuicideHappiness%>%
 ```
 There is slight inverse correlation between suicide rate and happiness value, but not enough to say they effect each others values.
 
+<br>
 
 # Graph of just 2015 suicide and happiness values
 ```{r}
@@ -167,3 +196,26 @@ SH2015%>%
   xlab("Country Happiness Scores in 2015")
 ```
 We separated the 2015 and 2016 values because there is more data from 2015 than 2016. There are about 100 glyphs in 2015 rather than the joined 2015 and 2016 there are only 28. From this graph we have more data points and can easily tell the rate of suicides start to drop when the happiness value reaches 7. We can conclude that when a country's happiness value is in the highest range the suicide rates decrease.
+
+<br>
+
+### Graph of 2015 Generosity Score and Suicides.
+
+```{r}
+SG2015%>%
+  ggplot(aes(x = Generosity2015, y = Year2015)) +
+  geom_point() +
+  geom_smooth() +
+  ylim(0, 3000) +
+  xlim(0, 0.4) +
+  ylab("Country Suicides in 2015") +
+  xlab("Country Generosity Scores in 2015")
+```
+```{r}
+G2015 %>%
+  summarise(meanG = mean(Generosity2015))
+```
+
+Taking a look at the generosity variable, we can see that countries with lower generosity scores, ranging from 0 and 0.2 will have a higher rate of suicide then countries with generosity scores above 0.2 as you can see in the graph. Countries that have a higher generosity score than the mean typically have lower suicide rates. 
+
+<br>
