@@ -25,7 +25,7 @@ library(DataComputing)
 
 <br>
 
-Our goal of this report is to look into whether or not countries that are generally happier have less citizens committing suicide. We have found a few data sets that will help us come up with an answer to this question. By combining data gathered on suicides across the world and reports on world happiness over the years, we have been able to make some insights.
+Our goal of this report is to look into whether or not countries that are generally happier have less citizens committing suicide. This topic is very interesting to research. Suicide is often a clear indicator of lack of happiness in a person's life, so we thought it would be very interesting to find a quantitative meausure of happiness among different regions of the world and compare it to the number of suicides in those regions. We have found a few data sets that will help us come up with an answer to this question. By combining data gathered on suicides across the world and reports on world happiness over the years, we have been able to make some insights.
 
 <br>
 
@@ -183,6 +183,10 @@ SuicideHappiness%>%
 There is slight inverse correlation between suicide rate and happiness value, but not enough to say they effect each others values.
 
 <br>
+
+## Difficulties
+
+The main technical difficulty we faced during our period of research was the lack of suicide data proivided for the 2016 year. There was much more suicide data from 2015 compared to 2016, as 2016 was the final year included in the original dataset. Although we were able to omit data that was not available from our analysis, by just focusing on data from 2015 we were able to draw more intuitive conclusions. Our focus of this project was not to look at the difference in suicides by year, so we thought it was appropriate to focus on just 2015 for some of our graph anaylsis.
 
 # Graph of just 2015 suicide and happiness values
 ```{r}
