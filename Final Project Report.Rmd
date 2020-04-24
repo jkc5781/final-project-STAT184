@@ -216,3 +216,8 @@ G2015 %>%
 Taking a look at the generosity variable, we can see that countries with lower generosity scores, ranging from 0 and 0.2 will have a higher rate of suicide then countries with generosity scores above 0.2 as you can see in the graph. Countries that have a higher generosity score than the mean typically have lower suicide rates. 
 
 <br>
+
+
+## Conclusions
+
+We were not able to confirm our guiding research question, as based on this data, there is no indication that world happiness scores and suicides are inversely correlated. One meaningful conclusion we made is that when a countrie's generosity score is above the world's average generosity score, there is a decline in total suicides in that country. This is clearly shown in the final graph of our report. This conclusion shows us that although happiness scores and total suicides don't have a clear negative correlation, various factors that contribute to happiness seem to have an inversed relationship with suicide numbers. However, our answer to our guiding research question is no, suicide rates and world happiness are not inversely correlated.
