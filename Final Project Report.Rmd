@@ -33,7 +33,7 @@ Our goal of this report is to look into whether or not countries that are genera
 
 <br>
 
-### Download all data files needed
+### Download 2015 and 2016 World Happiness Value files and Suicide Rates file to analyze the correlation
 ```{r}
 SuicideRates <-
   read.csv(file.choose())
@@ -59,7 +59,7 @@ head(WorldHappiness2016)
 
 <br>
 
-### Join 2015 and 2016 World Happiness tables
+### Join 2015 and 2016 World Happiness tables to make it easier to work with and analyze
 
 ```{r}
 WorldHappiness2015 <-
@@ -75,14 +75,14 @@ WorldHappiness <-
   full_join(WorldHappiness2016)
 ```
 
-### Only get years 2015 and 2016 from the suicide master table
+### Only get years 2015 and 2016 from the suicide master table since we only have 2015 and 2016 World Happiness Values
 ```{r}
 RecentSuicideRates <-
   SuicideRates %>%
   filter(year == 2015 | year == 2016)
 ```
 
-### Select and group by key values in suicide table
+### Select and group by key values in suicide and happiness table to gather all the important information
 ```{r}
 RecentSuicideRates <-
   RecentSuicideRates %>%
@@ -93,10 +93,7 @@ RecentSuicideRates <-
   group_by(country, year, sex) %>%
   summarise(totalsuicides = sum(suicides_no))
 RecentSuicideRates
-```
 
-### select key values in happiness table
-```{r}
 WorldHappiness <-
   WorldHappiness %>%
   select(country = Country, Happiness.Score, Generosity, year)
@@ -107,10 +104,9 @@ WorldHappiness <-
 SuicideByYear <-
   RecentSuicideRates %>%
   spread(key = year, value = totalsuicides)
-
 ```
 
-### Omit any NA values and rename 2015 and 2016 columns
+### Omit any NA values and rename 2015 and 2016 columns so we have values in all of the rows
 ```{r}
 Suicide2015<-
   SuicideByYear[1:3]
@@ -145,9 +141,7 @@ WorldHappinessByYear <-
 
 G2015<-WorldHappinessByYear[1:2]
 names(G2015)[2] <- "Generosity2015"
-```
 
-```{r}
 SG2015<-
 Suicide2015%>%
   inner_join(G2015)
@@ -186,11 +180,10 @@ There is slight inverse correlation between suicide rate and happiness value, bu
 
 ## Difficulties
 
-The main technical difficulty we faced during our period of research was the lack of suicide data proivided for the 2016 year. There was much more suicide data from 2015 compared to 2016, as 2016 was the final year included in the original dataset. Although we were able to omit data that was not available from our analysis, by just focusing on data from 2015 we were able to draw more intuitive conclusions. Our focus of this project was not to look at the difference in suicides by year, so we thought it was appropriate to focus on just 2015 for some of our graph anaylsis.
+The main technical difficulty we faced during our period of research was the lack of suicide data proivided for the 2016 year. There was much more suicide data from 2015 compared to 2016, as 2016 was the final year included in the original dataset. Although we were able to omit data that was not available from our analysis, by just focusing on data from 2015 we were able to draw more intuitive conclusions on how a country's suicide rates and happiness values compared to one another. Our focus of this project was not to look at the difference in suicides by year, so we thought it was appropriate to focus on just 2015 for some of our graph anaylsis.
 
 # Graph of just 2015 suicide and happiness values
 ```{r}
-
 SH2015%>%
   ggplot(aes(x = Happiness2015, y = Year2015)) +
   geom_point() +
@@ -199,7 +192,7 @@ SH2015%>%
   ylab("Country Suicides in 2015") +
   xlab("Country Happiness Scores in 2015")
 ```
-We separated the 2015 and 2016 values because there is more data from 2015 than 2016. There are about 100 glyphs in 2015 rather than the joined 2015 and 2016 there are only 28. From this graph we have more data points and can easily tell the rate of suicides start to drop when the happiness value reaches 7. We can conclude that when a country's happiness value is in the highest range the suicide rates decrease.
+We separated the 2015 and 2016 values because there is more data from 2015 than 2016. There are about 100 glyphs in 2015 rather than the joined 2015 and 2016 there are only 28. From this graph we have more data points and can easily tell the rate of suicides start to drop when the happiness value reaches 7. We can conclude that when a country's happiness value is in the highest 5% range the suicide rates decrease. Since this is such a small percent, we can not say that there is enough evidence that shows when a country's happiness value is low they will have a high suicide rate or when the happiness value is high they have a low suicide rate.
 
 <br>
 
