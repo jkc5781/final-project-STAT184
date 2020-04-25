@@ -182,6 +182,8 @@ There is slight inverse correlation between suicide rate and happiness value, bu
 
 The main technical difficulty we faced during our period of research was the lack of suicide data proivided for the 2016 year. There was much more suicide data from 2015 compared to 2016, as 2016 was the final year included in the original dataset. Although we were able to omit data that was not available from our analysis, by just focusing on data from 2015 we were able to draw more intuitive conclusions on how a country's suicide rates and happiness values compared to one another. Our focus of this project was not to look at the difference in suicides by year, so we thought it was appropriate to focus on just 2015 for some of our graph anaylsis.
 
+<br>
+
 # Graph of just 2015 suicide and happiness values
 ```{r}
 SH2015%>%
@@ -192,6 +194,9 @@ SH2015%>%
   ylab("Country Suicides in 2015") +
   xlab("Country Happiness Scores in 2015")
 ```
+
+<br>
+
 We separated the 2015 and 2016 values because there is more data from 2015 than 2016. There are about 100 glyphs in 2015 rather than the joined 2015 and 2016 there are only 28. From this graph we have more data points and can easily tell the rate of suicides start to drop when the happiness value reaches 7. We can conclude that when a country's happiness value is in the highest 5% range the suicide rates decrease. Since this is such a small percent, we can not say that there is enough evidence that shows when a country's happiness value is low they will have a high suicide rate or when the happiness value is high they have a low suicide rate.
 
 <br>
@@ -220,4 +225,6 @@ Taking a look at the generosity variable, we can see that countries with lower g
 
 ## Conclusions
 
-We were not able to confirm our guiding research question, as based on this data, there is no indication that world happiness scores and suicides are inversely correlated. One meaningful conclusion we made is that when a countrie's generosity score is above the world's average generosity score, there is a decline in total suicides in that country. This is clearly shown in the final graph of our report. This conclusion shows us that although happiness scores and total suicides don't have a clear negative correlation, various factors that contribute to happiness seem to have an inversed relationship with suicide numbers. However, our answer to our guiding research question is no, suicide rates and world happiness are not inversely correlated.
+We were not able to confirm our guiding research question, as based on this data, there is no indication that world happiness scores and suicides are inversely correlated. One meaningful conclusion we made is that when a country's generosity score is above the world's average generosity score, there is a decline in total suicides in that country. This is clearly shown in the final graph of our report. This conclusion shows us that although happiness scores and total suicides don't have a clear negative correlation, various factors that contribute to happiness seem to have an inversed relationship with suicide numbers. However, our answer to our guiding research question is no, suicide rates and world happiness are not inversely correlated.
+
+<br>
