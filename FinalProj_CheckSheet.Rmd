@@ -74,10 +74,13 @@ output:  html_notebook
 ### Other requirements (Nothing for you to report in this Guidance Document)
 
 (A) *All data visualizations* must be relevant to the stated research question, and the report must include at least one effective display of many--at least 3--variables 
+  Lines 168, 170, and 171 use 4 variables
 
 (B) *Code quality:* Code formatting is consistent with Style Guide Appendix of DataComputing eBook. Specifically, all code chunks demonstrate proficiency with (1) meaningful object names (2) proper use of white space especially with respect to infix operators, chain operators, commas, brackets/parens, etc (3) use of `<-` assignment operator throughout (4) use of meaningful comments.
 
 (C) *Narrative quality:* The narrative text (1) clearly states one research question that motivates the overall analysis, (2) explains reasoning for each significant step in the analysis and it's relationship to the research question, (3) explains significant findings and conclusions as they relate to the research question, and (4) is completely free of errors in spelling and grammar
+  Line 24 is our research question
+  Line 228 is our overall conclusion to our findings related to the research question
 
 (D) *Overall Quality:* Submitted project shows significant effort to produce a high-quality and thoughtful analysis that showcases STAT 184 skills. (2) The project must be self-contained, such that the analysis can be entirely rerun without errors. (3) Analysis is coherent, well-organized, and free of extraneous content such as data dumps, unrelated graphs, and other content that is not overtly connected to the research question.
 
